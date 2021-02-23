@@ -1,4 +1,4 @@
-image: Ubuntu
+image: Ubuntu2004
 
 stack: jdk 11
 
@@ -9,8 +9,9 @@ branches:
 build: off
 
 install:
-  - java -jar ./artifacts/app-order.jar &
   - chmod +x gradlew
+  - java -jar ./artifacts/app-order.jar &
+
 
 build_script:
   - ./gradlew test --info -Dselenide.headless=true
