@@ -1,6 +1,5 @@
 package ru.netology.web;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AppOrderTest {
     @Test
-    public void shouldSubmitRequest(){
+    void shouldSubmitRequest(){
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Евлампий Кашечкин");
@@ -20,7 +19,7 @@ public class AppOrderTest {
     }
 
     @Test
-    public void shouldNotSubmitRequestWithEmptyName(){
+    void shouldNotSubmitRequestWithEmptyName(){
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("button").click();
@@ -28,7 +27,7 @@ public class AppOrderTest {
     }
 
     @Test
-    public void shouldNotSubmitRequestWithEngName(){
+    void shouldNotSubmitRequestWithEngName(){
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Evlampy Kashechkin");
@@ -37,7 +36,7 @@ public class AppOrderTest {
     }
 
     @Test
-    public void shouldNotSubmitRequestWithEmptyNumber(){
+    void shouldNotSubmitRequestWithEmptyNumber(){
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Евлампий Кашечкин");
@@ -46,7 +45,7 @@ public class AppOrderTest {
     }
 
     @Test
-    public void shouldNotSubmitRequestWithWrongNumber() {
+    void shouldNotSubmitRequestWithWrongNumber() {
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Евлампий Кашечкин");
@@ -56,7 +55,7 @@ public class AppOrderTest {
     }
 
     @Test
-    public void shouldNotSubmitRequestWithoutAgree(){
+    void shouldNotSubmitRequestWithoutAgree(){
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Евлампий Кашечкин");
